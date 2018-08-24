@@ -1,0 +1,25 @@
+###本目录用于读<<学习Go语言>>这本书的所有练习和熟悉Golang
+1.常见的语法和练习题务必都敲一遍
+2.为了和家里同步，学习完上传到github
+
+
+知识点:
+1.golang中单引号只能有一个字符，一般情况下都使用双引号表示一个字符串
+2.两个字符串拼接用+时，如果有多行，则应该写在每行的末尾，不能在行的开头写+
+3.rune是int32的别名
+4.go原生支持复数.他的变量类型是complex128(64位虚数部分)
+5.error也是go基础的类型，任何足够大的程序或多或少都会需要使用到错误报告，因此go提供了一个内建类型,叫做error
+6.以下是go关键字:
+break default func interface select
+case defer go map struct
+chan else goto package switch
+const fallthrough if range type
+continue for import return var
+说明:
+func 用户定义函数和方法
+return 用户从函数返回
+go 用户并行
+select 用户选择不同类型的通讯
+interface 接口
+struct 用户抽象数据类型
+7.go中if >0 { 这个 {是强制一行的，不能单独一行
