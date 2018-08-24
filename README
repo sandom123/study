@@ -6,7 +6,7 @@
 知识点:
 1.golang中单引号只能有一个字符，一般情况下都使用双引号表示一个字符串
 2.两个字符串拼接用+时，如果有多行，则应该写在每行的末尾，不能在行的开头写+
-3.rune是int32的别名
+3.rune是int32的别名,byte是int8的别名,如果一个字符串被申明成rune或者byte,则该字符串只能用单引号，单引号用于单个字节的字符
 4.go原生支持复数.他的变量类型是complex128(64位虚数部分)
 5.error也是go基础的类型，任何足够大的程序或多或少都会需要使用到错误报告，因此go提供了一个内建类型,叫做error
 6.以下是go关键字:
@@ -22,4 +22,46 @@ go 用户并行
 select 用户选择不同类型的通讯
 interface 接口
 struct 用户抽象数据类型
+###----------------------------------------------------------------
+以下是内建函数关键字
+close new panic complex
+delete make recover real
+len append print imag
+cap copy println
+说明:
+close 用户channel通讯，使用它来关闭channel
+delete 用户在map中删除实例
+len和cap 可用户不通的类型，len用于返回字符串、slice和数组的长度;cap用户返回内存地址的长度
+new 用户各种类型的内存分配
+make 用于内建类型（map、slice和channel）的内存分配
+cope 用于复制slice
+append 用于追加slice
+pancic 和recover 用于异常处理机制
+print 和println 是底层打印函数，可以在不引入fmt包的情况下使用。它们主要用户调试
+cpmplex、real和imag 全部用户处理复述
+
 7.go中if >0 { 这个 {是强制一行的，不能单独一行
+8.go程序中可以定义一个标签，标签名称顶格写，标签中的代码可用goto调用，表示跳转到该标签处，作用类似于循环,
+  标签名称大小写敏感
+9.go中的for循环,for{} <-死循环
+10.利用break可以提前退出循环,break终止当前的循环
+11.关键字range可以用于循环，它可以用在slice,array,string,map和channel。range是个迭代器，当被调用的时候，从它循环的内容中返回一个键值对。
+   基于不同的内容，range返回不同的东西
+12.go的switch非常灵活。表达式不必是常亮或者整数，执行的过程从上至下，直到找到匹配项，而如果switch没有表达式,
+   它会匹配true。
+13.array、slice和map
+  ---可以利用array在列表中进行多个值的排序，或者使用更加灵活的:slice。字典或者哈希类型同样可以使用，在Go中叫map
+  array由[n]<type> 定义，n表示array的长度，而<type> 表示希望存储的内容的类型，对array的元素或者索引室友方括号完成的:
+  var arr [10]int
+  arr[0] = 42
+  ---如果数组的个数不确定可以这样声明:[...]int,数组的操作和赋值，会复制所有元素，只是获得一个数组的副本，而不是数组的指针
+  可以这样申明多维数组[3][2]int
+  ---array复合声明可以简写成 a:=[3][2]int{{1,2},{3,4},{5,6}}
+  ---slice与array接近,但是在新的元素加入的时候可以增加长度.slice总是指向底层的
+
+
+
+
+
+
+
